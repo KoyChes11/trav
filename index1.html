@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Sorphear Sopheaktra - Professional CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sidebar-bg: #0f172a;
+            --sidebar-text: #e2e8f0;
+            --sidebar-accent: #38bdf8;
+            --main-bg: #ffffff;
+            --main-text: #334155;
+            --heading-color: #0f172a;
+            --line-color: #cbd5e1;
+        }
+
+        body {
+            margin: 0;
+            padding: 2rem;
+            background-color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-container {
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+            background: var(--main-bg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 32%;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--sidebar-accent);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .sidebar h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            border-bottom: 2px solid var(--sidebar-accent);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .contact-item {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--sidebar-accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            text-align: left;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .skills-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--sidebar-accent);
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            width: 68%;
+            padding: 3.5rem 4rem;
+            color: var(--main-text);
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #0284c7;
+            margin: 0.5rem 0 2rem 0;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            text-align: justify;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background-color: var(--line-color);
+            margin-left: 1rem;
+        }
+
+        /* TIMELINE (Experience & Education) */
+        .timeline {
+            border-left: 2px solid var(--line-color);
+            padding-left: 2rem;
+            margin-left: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #0284c7;
+            border: 3px solid var(--main-bg);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin: 0;
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .item-subtitle {
+            font-size: 1.05rem;
+            color: #0284c7;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .item-desc ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .item-desc li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 850px) {
+            .cv-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 2rem;
+                box-sizing: border-box;
+            }
+            .main-content {
+                width: 100%;
+                padding: 2rem;
+                box-sizing: border-box;
+            }
+            .item-header {
+                flex-direction: column;
+            }
+            .item-date {
+                margin-top: 0.2rem;
+            }
+        }
+
+        /* PREMIUM PRINT OVERRIDES (Perfect A4 Single Page Fit) */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+            
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                width: 210mm;
+                height: 297mm;
+            }
+
+            .cv-container {
+                width: 100% !important;
+                max-width: none !important;
+                height: 297mm !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: row !important;
+                overflow: hidden !important;
+            }
+
+            .sidebar {
+                width: 32% !important;
+                background-color: var(--sidebar-bg) !important;
+                color: var(--sidebar-text) !important;
+                padding: 1.5rem 1.2rem !important;
+                height: 297mm !important;
+                box-sizing: border-box !important;
+            }
+
+            .profile-pic {
+                width: 110px !important;
+                height: 110px !important;
+                margin-bottom: 0.8rem !important;
+            }
+            
+            .sidebar h2 { 
+                margin-top: 1.2rem !important; 
+                margin-bottom: 0.6rem !important; 
+                font-size: 1rem !important; 
+            }
+            .contact-item { 
+                margin-bottom: 0.6rem !important; 
+                font-size: 0.8rem !important; 
+            }
+            .contact-item strong { 
+                margin-bottom: 0.1rem !important; 
+                font-size: 0.7rem !important;
+            }
+            .skills-list li { 
+                margin-bottom: 0.4rem !important; 
+                font-size: 0.8rem !important; 
+            }
+
+            .main-content {
+                width: 68% !important;
+                padding: 1.8rem 2.2rem !important;
+                background-color: var(--main-bg) !important;
+                height: 297mm !important;
+                box-sizing: border-box !important;
+            }
+            
+            .header h1 { 
+                font-size: 2.2rem !important; 
+            }
+            .header h3 { 
+                font-size: 1.1rem !important; 
+                margin-bottom: 0.8rem !important;
+            }
+            .summary { 
+                margin-bottom: 1.5rem !important; 
+                font-size: 0.88rem !important; 
+                line-height: 1.5 !important; 
+            }
+            .section-title { 
+                font-size: 1.25rem !important; 
+                margin-bottom: 0.8rem !important; 
+            }
+            
+            .timeline { 
+                margin-bottom: 1.2rem !important; 
+                padding-left: 1.5rem !important;
+            }
+            .timeline-item { 
+                margin-bottom: 1rem !important; 
+            }
+            .item-title { 
+                font-size: 1rem !important; 
+            }
+            .item-subtitle { 
+                margin-bottom: 0.2rem !important; 
+                font-size: 0.9rem !important;
+            }
+            .item-desc { 
+                font-size: 0.82rem !important; 
+                line-height: 1.4 !important; 
+            }
+            .item-desc ul { 
+                margin-top: 0.2rem !important; 
+            }
+            .item-desc li { 
+                margin-bottom: 0.2rem !important; 
+            }
+            
+            .timeline-item, .contact-item, .skills-list li {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <!-- Ensure your friend uploads their photo named "sopheaktra.jpg" in the same repo folder -->
+            <img src="sopheaktra.jpg" alt="Long Sorphear Sopheaktra" class="profile-pic">
+            
+            <h2>Contact</h2>
+            <div class="contact-item">
+                <strong>Phone</strong>
+                012 345 6789
+            </div>
+            <div class="contact-item">
+                <strong>Email</strong>
+                dogwearpant67@gmail.com
+            </div>
+            <div class="contact-item">
+                <strong>Location</strong>
+                Phnom Penh, Cambodia
+            </div>
+            <div class="contact-item">
+                <strong>GitHub</strong>
+                github.com/SopheaktraLong
+            </div>
+
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>React & Tailwind CSS</li>
+                <li>Python & C++</li>
+                <li>Full-Stack Development</li>
+                <li>Systems Automation</li>
+                <li>REST API Engineering</li>
+                <li>Git & Version Control</li>
+            </ul>
+
+            <h2>Languages</h2>
+            <ul class="skills-list">
+                <li>Khmer (Native)</li>
+                <li>English (Professional Working)</li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="header">
+                <h1>LONG SOPHEAR SOPHEAKTRA</h1>
+                <h3>Software Engineer</h3>
+            </header>
+
+            <p class="summary">
+                Highly motivated software engineering enthusiast combining a rigorous academic foundation in advanced mathematics and computational logic with hands-on full-stack development. Skilled in building structured, modern web applications and programming responsive systems-level backends. Dedicated to optimizing workflows, solving complex data-driven problems, and preparing to pursue a B.S. in Computer Science at the Institute of Technology of Cambodia (ITC).
+            </p>
+
+            <h2 class="section-title">Professional Projects</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4 class="item-title">Full-Stack Web Developer & Automator</h4>
+                        <span class="item-date">2025 – Present</span>
+                    </div>
+                    <div class="item-subtitle">Independent Technical Initiatives</div>
+                    <div class="item-desc">
+                        <ul>
+                            <li>Engineered and deployed a custom e-commerce web interface with React and Tailwind CSS, focusing on clean modular components and state management.</li>
+                            <li>Designed automated API pipelines using webhooks to route notification dispatches, optimizing system alert flows.</li>
+                            <li>Optimized frontend performance, achieving quick asset-loading speeds across variable mobile connections.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4 class="item-title">Creator & Algorithmic Programmer</h4>
+                        <span class="item-date">2026</span>
+                    </div>
+                    <div class="item-subtitle">STEM Software Utilities</div>
+                    <div class="item-desc">
+                        <ul>
+                            <li>Designed mathematical scripting utilities in Python to programmatically compute and graph multi-variable geometric algorithms.</li>
+                            <li>Built computational logic platforms focused on resolving algebraic matrices and rendering math physics representations directly in web sandboxes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4 class="item-title">B.S. in Computer Science</h4>
+                        <span class="item-date">Planned Enrollment: 2026</span>
+                    </div>
+                    <div class="item-subtitle">Institute of Technology of Cambodia (ITC)</div>
+                    <div class="item-desc">
+                        Focusing on Advanced Software Architectures, Computational Logic, and Algorithms.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-header">
+                        <h4 class="item-title">High School Diploma</h4>
+                        <span class="item-date">Expected: August 2026</span>
+                    </div>
+                    <div class="item-subtitle">Sovanaphum School</div>
+                    <div class="item-desc">
+                        Currently focusing heavily on the STEM curriculum and preparing for the upcoming BacII National Exam.
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
